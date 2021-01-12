@@ -1,3 +1,6 @@
+body {
+  font-family: "Delius", cursive;
+}
 .topBar {
   height: 66px;
   width: 100%;
@@ -11,7 +14,6 @@
 .category {
   top: 83px;
   width: 100%;
-  height: 49px;
   left: 0px;
   background: #ffffff;
   margin: auto;
@@ -19,10 +21,13 @@
 }
 .categoryText {
   margin: auto;
+  font-size: 20px;
   border: 1px solid #000000;
-  padding: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 35px;
 }
 .logo {
-  padding-left: 5rem;
+  padding-left: 80px;
   height: 66px;
 }
