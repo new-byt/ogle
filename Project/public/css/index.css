@@ -8,7 +8,8 @@ body {
   background: #4392f1;
   position: relative;
   left: 0px;
-  border: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
   box-sizing: border-box;
 }
 .category {
@@ -22,9 +23,10 @@ body {
 .categoryText {
   margin: auto;
   font-size: 20px;
-  border: 1px solid #000000;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding-top: 16px;
+  padding-bottom: 16px;
   padding-left: 35px;
 }
 .logo {
