@@ -1,7 +1,9 @@
+@import "variables";
+
 body {
   visibility: hidden;
 }
-
+//Desktop
 .category {
   top: 83px;
   left: 0px;
@@ -10,7 +12,6 @@ body {
   height: auto;
   min-width: 320px;
 }
-
 .categoryName {
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
@@ -18,18 +19,13 @@ body {
   padding-bottom: 1vh;
   padding-left: 30px;
 }
-
 .films {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding-top: 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   height: auto;
   padding-left: 30px;
 }
-
 .filmInfo {
   margin-right: 30px;
   position: relative;
@@ -38,35 +34,28 @@ body {
   width: 17vw;
   height: 38vh;
 }
-
 .filmPictureBox {
   height: 28vh;
 }
-
 .filmPicture {
   height: 100%;
   width: 100%;
 }
-
 .filmName {
   font-size: 15px;
 }
-
 .filmDescription {
   bottom: 0;
   font-size: 13px;
   max-height: 8vh;
   height: 6vh;
 }
-
 .filmRating {
   text-align: right;
 }
-
 .filmDescriptionBox {
   word-wrap: break-word;
 }
-
 .filmTextSection {
   font-size: 13px;
   position: absolute;
@@ -74,14 +63,12 @@ body {
   width: 100%;
   bottom: 0;
 }
-
+//Phone
 @media only screen and (max-width: 650px) {
   .categoryText {
     font-size: 20px;
   }
   .catergory {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: auto;
   }
@@ -90,12 +77,9 @@ body {
     margin: auto;
   }
   .films {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     padding-top: 16px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     height: 30vh;
     padding-left: 10px;
   }
@@ -126,10 +110,9 @@ body {
     bottom: 0;
   }
 }
-
+//Tablet
 @media only screen and (min-width: 768px) {
   .filmInfo {
     width: 25vw;
   }
 }
-/*# sourceMappingURL=index.css.map */
