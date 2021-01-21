@@ -1,77 +1,135 @@
 body {
-  font-family: "Delius", cursive;
-}
-
-.topBar {
-  height: 66px;
-  width: 100%;
-  top: 0.09px;
-  background: #4392f1;
-  position: relative;
-  left: 0x;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  visibility: hidden;
 }
 
 .category {
   top: 83px;
-  width: 100%;
   left: 0px;
   background: #ffffff;
-  margin: auto;
-  padding-top: 17px;
-  height: 350px;
+  padding-top: 16px;
+  height: auto;
+  min-width: 320px;
 }
 
-.categoryText {
-  margin: auto;
-  font-size: 20px;
+.categoryName {
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 35px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 30px;
 }
 
-.logo {
-  padding-left: 80px;
-  height: 66px;
-}
-
-.topBar,
-.links {
+.films {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: auto;
+  padding-left: 30px;
 }
 
-.links {
-  margin: auto;
-  margin-right: 80px;
+.filmInfo {
+  margin-right: 30px;
+  position: relative;
+  overflow: auto;
+  border: 1px solid black;
+  width: 17vw;
+  height: 38vh;
 }
 
-.pageChangeButton {
-  cursor: pointer;
-  padding: 20px;
+.filmPictureBox {
+  height: 28vh;
 }
 
-.searchBox {
-  padding-left: 66px;
+.filmPicture {
+  height: 100%;
+  width: 100%;
 }
 
-.search {
-  border: 0;
-  background-color: #eef0f2;
-  height: 30px;
-  width: 50%;
-  padding: 0;
+.filmName {
+  font-size: 15px;
 }
 
-.center {
-  text-align: center;
-  margin: auto;
-  width: 50%;
+.filmDescription {
+  bottom: 0;
+  font-size: 13px;
+  max-height: 8vh;
+  height: 6vh;
+}
+
+.filmRating {
+  text-align: right;
+}
+
+.filmDescriptionBox {
+  word-wrap: break-word;
+}
+
+.filmTextSection {
+  font-size: 13px;
+  position: absolute;
+  height: 10vh;
+  width: 100%;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 650px) {
+  .categoryText {
+    font-size: 20px;
+  }
+  .catergory {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+  }
+  .categoryName {
+    padding-left: 10px;
+    margin: auto;
+  }
+  .films {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 16px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 30vh;
+    padding-left: 10px;
+  }
+  .filmInfo {
+    position: relative;
+    overflow: auto;
+    border: 1px solid black;
+    width: 40vw;
+    height: 28vh;
+    margin-left: 0;
+    margin-right: 5vw;
+  }
+  .filmPictureBox {
+    height: 18vh;
+    width: 40vw;
+  }
+  .filmDescription {
+    font-size: 10px;
+  }
+  .filmRating {
+    text-align: right;
+  }
+  .filmTextSection {
+    font-size: 15px;
+    position: absolute;
+    height: 10vh;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .filmInfo {
+    width: 25vw;
+  }
 }
 /*# sourceMappingURL=index.css.map */
