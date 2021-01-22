@@ -1,0 +1,43 @@
+@import "variables";
+
+.loginBox {
+  padding-top: 16px;
+  height: 50vw;
+}
+.loginBar {
+  padding-top: 16px;
+}
+.loginBarText {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 30px;
+  margin-top: auto;
+  background-color: $ogleBlue;
+  height: auto;
+}
+//USERNAME
+.usernameBox {
+  margin-bottom: 10px;
+}
+.username {
+}
+//PASSWORD
+.passwordBox {
+}
+.password {
+}
+//BOTH
+.username,
+.password {
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  background-color: $ogleWhite;
+}
+
+@media only screen and (max-width: 650px) {
+  .loginBarText {
+    font-size: 20px;
+  }
+}

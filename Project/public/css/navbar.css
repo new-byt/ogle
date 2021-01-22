@@ -157,7 +157,7 @@ input {
     width: 6vh;
   }
   .hamburger {
-    margin-right: 10x;
+    margin-right: 10px;
     height: 6vh;
     width: 6vh;
   }
@@ -175,6 +175,13 @@ input {
     padding: 0;
     margin: auto;
   }
+  .logo {
+    height: 10vh;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 650px) {
   .logo {
     padding-left: 5px;
     height: 10vh;

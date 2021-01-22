@@ -1,0 +1,38 @@
+.loginBox {
+  padding-top: 16px;
+  height: 50vw;
+}
+
+.loginBar {
+  padding-top: 16px;
+}
+
+.loginBarText {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 30px;
+  margin-top: auto;
+  background-color: #4392f1;
+  height: auto;
+}
+
+.usernameBox {
+  margin-bottom: 10px;
+}
+
+.username,
+.password {
+  border: 1px solid #000000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #eef0f2;
+}
+
+@media only screen and (max-width: 650px) {
+  .loginBarText {
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=login.css.map */

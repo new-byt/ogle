@@ -15,6 +15,7 @@ body {
 .categoryName {
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
+  background-color: $ogleBlue;
   padding-top: 1vh;
   padding-bottom: 1vh;
   padding-left: 30px;
@@ -38,6 +39,7 @@ body {
   height: 28vh;
 }
 .filmPicture {
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -111,7 +113,7 @@ body {
   }
 }
 //Tablet
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   .filmInfo {
     width: 25vw;
   }

@@ -2,13 +2,11 @@ var storageRef = storage.ref();
 //width of page
 var i = 0;
 if (vw <= 768) {
-  if (vw <= 650) {
-    i = 2;
-  } else {
+  if (vw >= 600) {
     i = 1;
+  } else {
+    i = 2;
   }
-} else if (vw <= 1024) {
-  i = 1;
 } else {
   i = 0;
 }
