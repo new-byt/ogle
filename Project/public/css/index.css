@@ -14,6 +14,7 @@ body {
 .categoryName {
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
+  background-color: #4392f1;
   padding-top: 1vh;
   padding-bottom: 1vh;
   padding-left: 30px;
@@ -44,6 +45,8 @@ body {
 }
 
 .filmPicture {
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -127,7 +130,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   .filmInfo {
     width: 25vw;
   }
