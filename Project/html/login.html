@@ -60,14 +60,21 @@
                 <h1>Login</h1>
             </div>
         </div>
-        <div class="loginBox">
-            <div class="usernameBox">
-                <input type="text" class="username">
+        <form action="" class="login">
+            <div class="loginBox">
+                <div class="usernameBox">
+                    <img src="/assets/inbox.png" alt="User icon" class="icon">
+                    <input type="text" class="username" autocomplete="username">
+                </div>
+                <div class="passwordBox">
+                    <img src="/assets/lock.png" alt="Password icon" class="icon">
+                    <input type="password" class="password" autocomplete="current-password">
+                </div>
+                <div class="signInBox">
+                    <input type="submit" value="Sign in!" class="signInButton">
+                </div>
             </div>
-            <div class="passwordBox">
-                <input type="password" class="password">
-            </div>
-        </div>
+        </form>
     </div>
     </div>
     <script src="js/nav.js"></script>

@@ -1,10 +1,10 @@
 .loginBox {
-  padding-top: 16px;
+  margin-top: 25px;
   height: 50vw;
 }
 
 .loginBar {
-  padding-top: 16px;
+  margin-top: 16px;
 }
 
 .loginBarText {
@@ -28,10 +28,51 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #eef0f2;
+  width: 250px;
+}
+
+.usernameBox,
+.passwordBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 7vh;
+}
+
+.signInBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signInButton {
+  margin: 10px;
+  border: 1px solid black;
+  background-color: #f18282;
+  padding: 10px;
+}
+
+.icon {
+  height: 7vh;
 }
 
 @media only screen and (max-width: 650px) {
   .loginBarText {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loginBarText {
+    font-size: 26px;
+  }
+  body {
     font-size: 20px;
   }
 }
