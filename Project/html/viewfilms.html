@@ -8,6 +8,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
     <!--STYLING START-->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -37,9 +38,11 @@
         </div>
         <!-- links -->
         <div class="links">
+            <a href="/" class="pageChangeButton">Home</a>
             <a href="/viewfilms" class="pageChangeButton">View films</a>
-            <a href="/login" class="pageChangeButton">Login</a>
-            <a href="/signup" class="pageChangeButton">Create an account</a>
+            <a href="/login" class="pageChangeButton login">Login</a>
+            <a class="pageChangeButton logout" onclick="logout()">Logout</a>
+            <a href="/signup" class="pageChangeButton create">Create an account</a>
         </div>
         <!-- Sidebar -->
         <div class="sidebar">
@@ -47,16 +50,18 @@
             </div>
             <!-- links -->
             <ul class="sidebarButtons">
+                <li class="sidebarButton"><a href="/" class="pageChangeButton">Home</a></li>
                 <li class="sidebarButton"><a href="/viewfilms" class="pageChangeButton">View films</a></li>
-                <li class="sidebarButton"><a href="/login" class="pageChangeButton">Login</a></li>
-                <li class="sidebarButton"><a href="/signup" class="pageChangeButton">Sign up</a></li>
+                <li class="sidebarButton login"><a href="/login" class="pageChangeButton login">Login</a></li>
+                <li class="sidebarButton logout"><a class="logout" onclick="logout()">Logout</a></li>
+                <li class="sidebarButton create"><a href="/signup" class="pageChangeButton create">Sign up</a></li>
             </ul>
         </div>
     </div>
     <div class="main clickAway">
     </div>
-    <script src="js/nav.js"></script>
     <script src="js/firebase.js"></script>
+    <script src="js/nav.js"></script>
     <script src="js/login.js"></script>
 
 </body>

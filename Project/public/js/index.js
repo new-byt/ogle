@@ -1,4 +1,5 @@
 var storageRef = storage.ref();
+
 //width of page
 var i = 0;
 if (vw <= 768) {
@@ -24,7 +25,6 @@ let test = async function () {
         }
       });
     });
-  pageLoaded();
 };
 test();
 
