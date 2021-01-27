@@ -1,8 +1,5 @@
 @import "variables";
 
-body {
-  visibility: hidden;
-}
 //Desktop
 .category {
   top: 83px;
@@ -39,7 +36,7 @@ body {
   height: 28vh;
 }
 .filmPicture {
-  object-fit: cover;
+  object-fit: fill;
   height: 100%;
   width: 100%;
 }

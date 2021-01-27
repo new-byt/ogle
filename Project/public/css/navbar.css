@@ -1,3 +1,7 @@
+body {
+  visibility: hidden;
+}
+
 p,
 h1,
 h2,
@@ -47,7 +51,7 @@ input {
 .links {
   margin: auto;
   white-space: nowrap;
-  font-size: 2vw;
+  font-size: 25px;
   margin-left: 0;
 }
 
@@ -126,11 +130,10 @@ input {
 
 @media only screen and (min-width: 769px) {
   .hamburger {
-    visibility: hidden;
-    position: absolute;
+    display: none;
   }
   .sidebar {
-    visibility: hidden;
+    display: none;
   }
 }
 
@@ -145,10 +148,15 @@ input {
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  .links {
+    font-size: 18px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .links {
-    visibility: hidden;
-    position: absolute;
+    display: none;
   }
   .hamburgerImage {
     height: 6vh;
@@ -185,5 +193,9 @@ input {
     height: 10vh;
     margin: auto;
   }
+}
+
+.logout {
+  display: none;
 }
 /*# sourceMappingURL=navbar.css.map */
