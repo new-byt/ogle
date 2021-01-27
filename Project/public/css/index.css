@@ -1,3 +1,7 @@
+body {
+  visibility: hidden;
+}
+
 .category {
   top: 83px;
   left: 0px;
@@ -41,8 +45,8 @@
 }
 
 .filmPicture {
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
   width: 100%;
 }
