@@ -1,2 +1,1 @@
-node app.js
-pause
+call cmd /k "npm install && node app.js"

@@ -1,15 +1,11 @@
 var storageRef = storage.ref();
 
 //width of page
-var i = 0;
+var i = 1;
 if (vw <= 768) {
-  if (vw >= 600) {
-    i = 1;
-  } else {
+  if (vw <= 600) {
     i = 2;
   }
-} else {
-  i = 0;
 }
 
 //Gets films
