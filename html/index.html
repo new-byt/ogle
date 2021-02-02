@@ -60,45 +60,42 @@
         </div>
     </div>
     <div class="main clickAway">
+    </div>
+    <template id="genre">
         <div class="category">
             <div class="categoryName">
-                <h1 class="categoryText">Category</h1>
+                <h1 class="categoryText">Films</h1>
             </div>
-            <div class="films">
-            </div>
-        </div>
-        <div class="category">
-            <div class="categoryName">
-                <h1 class="categoryText">Category</h1>
-            </div>
-            <div class="films">
-            </div>
-        </div>
-        <div class="category">
-            <div class="categoryName">
-                <h1 class="categoryText">Category</h1>
-            </div>
-            <div class="films">
-            </div>
-        </div>
-        <template id="filmTemplate">
-            <div class="filmInfo">
-                <div class="filmPictureBox">
-                    <video src="" type="picture/png" class="filmPicture">
+            <div class="box">
+                <div class="films">
                 </div>
-                <div class="filmTextSection">
-                    <div>
-                        <h1 class="filmName"></h1>
-                    </div>
-                    <div class="filmDescriptionBox">
-                        <p class="filmDescription"></p>
+                <div class="center">
+                    <div class="arrowBox">
+                        <i class="arrow right"></i>
                     </div>
                 </div>
+            </div>
+        </div>
+        </div>
+    </template>
+    <template id="filmTemplate">
+        <div class="filmInfo">
+            <div class="filmPictureBox">
+                <video src="" type="picture/png" class="filmPicture">
+            </div>
+            <div class="filmTextSection">
                 <div>
-                    <p class="filmRating"></p>
+                    <h1 class="filmName"></h1>
+                </div>
+                <div class="filmDescriptionBox">
+                    <p class="filmDescription"></p>
                 </div>
             </div>
-        </template>
+            <div>
+                <p class="filmRating"></p>
+            </div>
+        </div>
+    </template>
     </div>
     <script src="js/firebase.js"></script>
     <script src="js/nav.js"></script>

@@ -1,0 +1,33 @@
+@import "variables";
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.genreBox {
+  border: 1px solid black;
+  width: 40vw;
+  margin: 1vw;
+  height: 30vh;
+}
+.genreImage {
+  height: 20vh;
+}
+.genrePic {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+}
+// Desktop
+@media only screen and (min-width: 1000px) {
+  .genreBox {
+    width: 25vw;
+    height: 30vh;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .genreBox {
+    width: 20vw;
+    height: 30vh;
+  }
+}

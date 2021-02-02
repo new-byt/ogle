@@ -1,5 +1,4 @@
 @import "variables";
-
 //Desktop
 .category {
   top: 83px;
@@ -7,6 +6,25 @@
   background: #ffffff;
   padding-top: 16px;
   height: auto;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3vw 3vw 0;
+  display: inline-block;
+  padding: 3vw;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.box {
+  display: flex;
+}
+.center {
+  width: 10vw;
+}
+.arrowBox {
+  padding: 10vh 0;
 }
 .categoryName {
   border-top: 1px solid #000000;
@@ -66,6 +84,10 @@
   .categoryText {
     font-size: 20px;
   }
+  .arrow {
+    border-width: 0 3vw 3vw 0;
+    padding: 2vw;
+  }
   .catergory {
     display: flex;
     margin: auto;
@@ -79,7 +101,7 @@
     padding-top: 16px;
     box-sizing: border-box;
     height: 30vh;
-    padding-left: 10px;
+    padding-left: 0px;
   }
   .filmInfo {
     position: relative;
@@ -87,8 +109,8 @@
     border: 1px solid black;
     width: 40vw;
     height: 28vh;
-    margin-left: 0;
-    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-right: 0;
   }
   .filmPictureBox {
     height: 18vh;
@@ -112,5 +134,9 @@
 @media only screen and (min-width: 600px) {
   .filmInfo {
     width: 25vw;
+  }
+  .arrow {
+    border-width: 0 2vw 2vw 0;
+    padding: 2.5vw;
   }
 }

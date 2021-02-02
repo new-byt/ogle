@@ -1,10 +1,11 @@
-var storageRef = storage.ref();
-
+const storageRef = storage.ref();
+const main = document.querySelector(".main");
+var genreArray = [];
 //width of page
-var i = 1;
+var baseNumber = 1;
 if (vw <= 768) {
   if (vw <= 600) {
-    i = 2;
+    baseNumber = 2;
   }
 }
 
@@ -15,51 +16,85 @@ let test = async function () {
     .get()
     .then(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
-        i++;
-        if (i <= 4) {
-          createFilmElements(doc.data());
-        }
+        film = doc.data();
+        createGenres(film);
       });
     });
+  console.log(genreArray);
+  createFilmElements(genreArray);
 };
 test();
 
+function createGenres(film) {
+  newGenre = true;
+  console.log(genreArray.length);
+  if (genreArray.length != 0) {
+    for (i = 0; i < genreArray.length; i++) {
+      if (genreArray[i][0] == film.genre) {
+        console.log(genreArray[i][0] + "Duplicate");
+        genreArray[i][1].push([film]);
+        newGenre = false;
+        //console.log(film.genre);
+      }
+    }
+  }
+  //console.log(newGenre);
+  if (newGenre) {
+    createGenre(film.genre);
+    genreArray.push([film.genre, [[film], [film], [film], [film], [film]]]);
+  }
+}
+
+function createGenre(genre) {
+  var template = document.querySelector("#genre");
+  var clone = template.content.cloneNode(true);
+  clone.querySelector(".category").classList.add(genre.toLowerCase());
+  clone.querySelector(".categoryText").innerText = genre;
+  main.appendChild(clone);
+}
+
 //Adds film into to the template
-function createFilmElements(data) {
-  var filmInfo = [
-    ["filmName", data.title],
-    ["filmDescription", data.description],
-    ["filmRating", data.age],
-  ];
-  var filmTemplate = document.querySelector("#filmTemplate");
-  var clone = filmTemplate.content.cloneNode(true);
-  filmInfo.forEach((item) => {
-    console.log(item);
-    var filmData = clone.querySelector("." + item[0]);
-    filmData.textContent = item[1];
+function createFilmElements(filmArray) {
+  filmArray.forEach((films) => {
+    var i = baseNumber;
+    //console.log(films[0]);
+    films[1].forEach((film) => {
+      if (i < 4) {
+        film = film[0];
+        var filmInfo = [
+          ["filmName", film.title],
+          ["filmDescription", film.description],
+          ["filmRating", film.age],
+        ];
+        var filmTemplate = document.querySelector("#filmTemplate");
+        var clone = filmTemplate.content.cloneNode(true);
+        filmInfo.forEach((item) => {
+          //console.log(item);
+          var filmData = clone.querySelector("." + item[0]);
+          filmData.textContent = item[1];
+        });
+
+        //Add trailer image
+        console.log(film.trailer);
+        addTrailerImage(clone, film.trailer);
+        //Add to category
+        document
+          .querySelector("." + film.genre.toLowerCase())
+          .querySelector(".films")
+          .appendChild(clone);
+        i++;
+      }
+    });
   });
-  //Add trailor image
-  console.log(data.trailer);
-  addTrailorImage(clone, data.trailer);
-  //Add to category
-  var category = document.querySelector(".category");
-  category.querySelector(".films").appendChild(clone);
 }
 
 //Add trailer function
-function addTrailorImage(cloneOfTemplate, trailer) {
+function addTrailerImage(cloneOfTemplate, trailer) {
   var trailerElement = cloneOfTemplate.querySelector(".filmPicture");
   var trailerRef = storageRef.child("trailers/" + trailer);
   trailerRef
     .getDownloadURL()
     .then(function (url) {
-      var xhr = new XMLHttpRequest();
-      xhr.responseType = "blob";
-      xhr.onload = function (event) {
-        var blob = xhr.response;
-      };
-      xhr.open("GET", url);
-      xhr.send();
       trailerElement.src = url;
     })
     .catch(function (error) {
