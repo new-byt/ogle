@@ -10,20 +10,22 @@ if (vw <= 768) {
 }
 
 //Gets films
-let test = async function () {
+(async function () {
   await db
     .collection("movies")
     .get()
     .then(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
         film = doc.data();
-        createGenres(film);
+        if (film.title !== "none") {
+          console.log(film);
+          createGenres(film);
+        }
       });
     });
   console.log(genreArray);
   createFilmElements(genreArray);
-};
-test();
+})();
 
 function createGenres(film) {
   newGenre = true;
@@ -41,7 +43,10 @@ function createGenres(film) {
   //console.log(newGenre);
   if (newGenre) {
     createGenre(film.genre);
-    genreArray.push([film.genre, [[film], [film], [film], [film], [film]]]);
+    genreArray.push([
+      film.genre,
+      [[film], [film], [film], [film], [film]], // Test
+    ]);
   }
 }
 
@@ -75,8 +80,7 @@ function createFilmElements(filmArray) {
         });
 
         //Add trailer image
-        console.log(film.trailer);
-        addTrailerImage(clone, film.trailer);
+        addTrailerImage(clone, film.photo);
         //Add to category
         document
           .querySelector("." + film.genre.toLowerCase())
@@ -89,9 +93,9 @@ function createFilmElements(filmArray) {
 }
 
 //Add trailer function
-function addTrailerImage(cloneOfTemplate, trailer) {
+function addTrailerImage(cloneOfTemplate, photo) {
   var trailerElement = cloneOfTemplate.querySelector(".filmPicture");
-  var trailerRef = storageRef.child("trailers/" + trailer);
+  var trailerRef = storageRef.child("poster/" + photo);
   trailerRef
     .getDownloadURL()
     .then(function (url) {

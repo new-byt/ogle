@@ -14,17 +14,19 @@ let test = async function () {
     .then(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
         film = doc.data();
-        newGenre = true;
-        for (i = 0; i < genreArray.length; i++) {
-          if (genreArray[i][0] == film.genre) {
-            console.log("Duplicate");
-            genreArray[i].push([film]);
-            newGenre = false;
-            break;
+        if (film.title !== "none") {
+          newGenre = true;
+          for (i = 0; i < genreArray.length; i++) {
+            if (genreArray[i][0] == film.genre) {
+              console.log("Duplicate");
+              genreArray[i].push([film]);
+              newGenre = false;
+              break;
+            }
           }
-        }
-        if (newGenre) {
-          genreArray.push([film.genre, [film]]);
+          if (newGenre) {
+            genreArray.push([film.genre, [film]]);
+          }
         }
       });
     });
@@ -49,7 +51,7 @@ async function createBox(genre) {
   var name = templateClone.querySelector(".genreName");
   name.innerText = genre[0];
   //Picture
-  addPicture(genre[1][0].trailer, templateClone);
+  addPicture(genre[1][0].photo, templateClone);
   eventListenerFunc(templateClone.querySelector(".genreBox"), genre);
   main.appendChild(templateClone);
 }
@@ -65,7 +67,7 @@ function eventListenerFunc(box, genre) {
 //add picture
 function addPicture(pictureUrl, templateClone) {
   var picture = templateClone.querySelector(".genrePic");
-  pictureRef = storageRef.child("trailers/" + pictureUrl);
+  pictureRef = storageRef.child("poster/" + pictureUrl);
   pictureRef
     .getDownloadURL()
     .then(function (url) {
