@@ -1,6 +1,6 @@
 const storageRef = storage.ref();
-const main = document.querySelector(".main");
-const template = document.querySelector(".genreTemplate");
+const main = document.querySelector(".genres");
+const template = document.querySelector("#genreTemplate");
 const elementArray = [
   [".genreName", "innerText"],
   [".genrePic", "src"],
@@ -47,6 +47,9 @@ function createCategoryBox(genreArray) {
 //Create box for genre
 async function createBox(genre) {
   var templateClone = template.content.cloneNode(true);
+  //Category bar name
+  let genreBox = templateClone.querySelector(".genreBox");
+  genreBox.classList.add(genre[0].toLowerCase());
   //Name
   var name = templateClone.querySelector(".genreName");
   name.innerText = genre[0];
@@ -58,8 +61,11 @@ async function createBox(genre) {
 
 //addEventListener function
 function eventListenerFunc(box, genre) {
-  box.classList.add(genre[0].toLowerCase());
   box.addEventListener("click", function () {
+    let categoryName = document.querySelector(".categoryName");
+    categoryName.innerText = genre[0];
+    let filmGenre = document.querySelector(".filmGenre");
+    filmGenre.classList.add(genre[0].toLowerCase());
     hideOtherGenres(genre[0]);
   });
 }
@@ -97,8 +103,23 @@ function addPicture(pictureUrl, templateClone) {
 function hideOtherGenres(genre) {
   var allBoxes = document.querySelectorAll(".genreBox");
   allBoxes.forEach((box) => {
-    if (!box.classList.contains(genre.toLowerCase())) {
-      box.style.display = "none";
-    }
+    box.style.display = "none";
   });
+  showFilmsOfGenre(genre);
+}
+
+//--------------------------------------- CLICK TO VIEW FILMS OF GENRE CLICKED -------------------
+async function showFilmsOfGenre(genre) {
+  await db
+    .collection("movies")
+    .get()
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        film = doc.data();
+        if (doc.id !== "none" && film.genre === genre) {
+          console.log(film);
+          addFilm(film, "." + genre.toLowerCase());
+        }
+      });
+    });
 }

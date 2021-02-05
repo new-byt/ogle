@@ -21,8 +21,8 @@ input {
   left: 0;
   border-bottom: 1px solid #000000;
   box-sizing: border-box;
-  width: 100vw;
   height: 10vh;
+  display: flex;
 }
 .logo {
   padding-left: 30px;

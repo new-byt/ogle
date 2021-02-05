@@ -1,33 +1,95 @@
 @import "variables";
-.main {
+.genres {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .genreBox {
   border: 1px solid black;
-  width: 40vw;
   margin: 1vw;
-  height: 30vh;
+  margin-top: 0;
+  width: 28vw;
+  height: 35vh;
+  overflow: auto;
 }
 .genreImage {
-  height: 20vh;
+  height: 25vh;
 }
 .genrePic {
   object-fit: fill;
   height: 100%;
   width: 100%;
 }
-// Desktop
-@media only screen and (min-width: 1000px) {
-  .genreBox {
-    width: 25vw;
-    height: 30vh;
-  }
+.genreName {
+  margin: auto;
 }
-@media only screen and (min-width: 1600px) {
+.genreText {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+}
+.category {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.categoryName {
+  font-size: 20px;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 35px;
+  margin-top: auto;
+  background-color: $ogleBlue;
+  height: auto;
+}
+.films {
+  display: flex;
+  box-sizing: border-box;
+  height: auto;
+  padding-left: 30px;
+}
+.filmInfo {
+  margin-right: 30px;
+  position: relative;
+  overflow: auto;
+  border: 1px solid black;
+  width: 17vw;
+  height: 38vh;
+}
+.filmPictureBox {
+  height: 28vh;
+}
+.filmPicture {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+}
+.filmName {
+  font-size: 15px;
+}
+.filmDescription {
+  bottom: 0;
+  font-size: 13px;
+  max-height: 8vh;
+  height: 6vh;
+}
+.filmRating {
+  text-align: right;
+}
+.filmDescriptionBox {
+  word-wrap: break-word;
+}
+.filmTextSection {
+  font-size: 13px;
+  position: absolute;
+  height: 10vh;
+  width: 100%;
+  bottom: 0;
+}
+@media only screen and (max-width: 768px) {
   .genreBox {
-    width: 20vw;
-    height: 30vh;
+    width: 40vw;
   }
 }

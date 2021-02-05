@@ -60,21 +60,51 @@
         </div>
     </div>
     <div class="main clickAway">
+        <div class="category">
+            <h1 class="categoryName">View films</h1>
+        </div>
+        <div class="filmGenre">
+            <div class="films"></div>
+        </div>
+        <div class="genres">
+        </div>
     </div>
 
     <!-- Template -->
-    <template class="genreTemplate">
+    <template id="genreTemplate">
         <div class="genreBox">
             <div class="genreImage">
                 <img src="" class="genrePic">
             </div>
-            <h1 class="genreName"></h1>
+            <div class="genreText">
+                <h1 class="genreName"></h1>
+            </div>
+        </div>
+    </template>
+
+    <template id="filmTemplate">
+        <div class="filmInfo">
+            <div class="filmPictureBox">
+                <img src="" class="filmPicture">
+            </div>
+            <div class="filmTextSection">
+                <div>
+                    <h1 class="filmName"></h1>
+                </div>
+                <div class="filmDescriptionBox">
+                    <p class="filmDescription"></p>
+                </div>
+            </div>
+            <div>
+                <p class="filmRating"></p>
+            </div>
         </div>
     </template>
 
 
     <script src="js/firebase.js"></script>
     <script src="js/nav.js"></script>
+    <script src="js/addfilm.js"></script>
     <script src="js/viewfilms.js"></script>
 
 </body>

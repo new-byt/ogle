@@ -4,35 +4,37 @@
   top: 83px;
   left: 0px;
   background: #ffffff;
-  padding-top: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   height: auto;
 }
 .arrow {
-  border: solid black;
-  border-width: 0 3vw 3vw 0;
-  display: inline-block;
-  padding: 3vw;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10vh 0 10vh 10vh;
+  border-color: transparent transparent transparent black;
 }
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+.arrowBox {
+  padding-top: 16px;
+  padding-left: 1vw;
+  justify-content: center;
+  display: flex;
 }
 .box {
   display: flex;
 }
-.arrowWidth {
-  width: 10vw;
-}
-.arrowBox {
-  padding: 10vh 0;
-}
 .categoryName {
+  font-size: 20px;
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
-  background-color: $ogleBlue;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  padding-left: 30px;
+  padding-left: 35px;
+  margin-top: auto;
+  background-color: $ogleBlue;
+  height: auto;
 }
 .films {
   display: flex;
@@ -84,10 +86,6 @@
   .categoryText {
     font-size: 20px;
   }
-  .arrow {
-    border-width: 0 3vw 3vw 0;
-    padding: 2vw;
-  }
   .catergory {
     display: flex;
     margin: auto;
@@ -129,14 +127,22 @@
     width: 100%;
     bottom: 0;
   }
+  .arrow {
+    display: none;
+  }
 }
 //Tablet
 @media only screen and (min-width: 600px) {
   .filmInfo {
     width: 25vw;
+    height: 30vh;
   }
+  .filmPictureBox {
+    height: 20vh;
+  }
+}
+@media only screen and (max-width: 1024px) {
   .arrow {
-    border-width: 0 2vw 2vw 0;
-    padding: 2.5vw;
+    border-width: 5vh 0 5vh 5vh;
   }
 }
