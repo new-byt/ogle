@@ -66,7 +66,7 @@ function eventListenerFunc(box, genre) {
     categoryName.innerText = genre[0];
     let filmGenre = document.querySelector(".filmGenre");
     filmGenre.classList.add(genre[0].toLowerCase());
-    hideOtherGenres(genre[0]);
+    hideOtherGenres(genre);
   });
 }
 
@@ -108,18 +108,15 @@ function hideOtherGenres(genre) {
   showFilmsOfGenre(genre);
 }
 
-//--------------------------------------- CLICK TO VIEW FILMS OF GENRE CLICKED -------------------
-async function showFilmsOfGenre(genre) {
-  await db
-    .collection("movies")
-    .get()
-    .then(function (querySnapshot) {
-      querySnapshot.forEach(function (doc) {
-        film = doc.data();
-        if (doc.id !== "none" && film.genre === genre) {
-          console.log(film);
-          addFilm(film, "." + genre.toLowerCase());
-        }
-      });
-    });
+//Click to view films of genre clicked
+function showFilmsOfGenre(genre) {
+  genre[1].forEach((film) => {
+    addFilm(film);
+    addFilm(film);
+    addFilm(film);
+    addFilm(film);
+    addFilm(film);
+    addFilm(film);
+  });
+  addRedirects();
 }

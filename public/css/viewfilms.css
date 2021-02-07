@@ -1,16 +1,13 @@
 .genres {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
   margin-bottom: 20px;
 }
 
 .genreBox {
+  cursor: pointer;
   border: 1px solid black;
   margin: 1vw;
   margin-top: 0;
@@ -62,21 +59,23 @@
 }
 
 .films {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  grid-gap: 50px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: auto;
-  padding-left: 30px;
+  width: auto;
 }
 
 .filmInfo {
-  margin-right: 30px;
+  cursor: pointer;
   position: relative;
   overflow: auto;
   border: 1px solid black;
-  width: 17vw;
+  width: 20vw;
   height: 38vh;
 }
 
@@ -116,6 +115,15 @@
   height: 10vh;
   width: 100%;
   bottom: 0;
+}
+
+.filmGenre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {

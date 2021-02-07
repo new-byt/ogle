@@ -24,6 +24,7 @@
 }
 .box {
   display: flex;
+  justify-content: center;
 }
 .categoryName {
   font-size: 20px;
@@ -37,14 +38,14 @@
   height: auto;
 }
 .films {
-  display: flex;
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
   padding-top: 16px;
   box-sizing: border-box;
   height: auto;
-  padding-left: 30px;
 }
 .filmInfo {
-  margin-right: 30px;
+  cursor: pointer;
   position: relative;
   overflow: auto;
   border: 1px solid black;
@@ -95,7 +96,8 @@
     margin: auto;
   }
   .films {
-    display: flex;
+    grid-template-columns: 40vw 40vw;
+    grid-gap: 10px;
     padding-top: 16px;
     box-sizing: border-box;
     height: 30vh;
@@ -107,8 +109,6 @@
     border: 1px solid black;
     width: 40vw;
     height: 28vh;
-    margin-left: 5vw;
-    margin-right: 0;
   }
   .filmPictureBox {
     height: 18vh;
@@ -129,20 +129,5 @@
   }
   .arrow {
     display: none;
-  }
-}
-//Tablet
-@media only screen and (min-width: 600px) {
-  .filmInfo {
-    width: 25vw;
-    height: 30vh;
-  }
-  .filmPictureBox {
-    height: 20vh;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .arrow {
-    border-width: 5vh 0 5vh 5vh;
   }
 }

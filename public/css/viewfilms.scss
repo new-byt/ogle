@@ -1,11 +1,11 @@
 @import "variables";
 .genres {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
   margin-bottom: 20px;
 }
 .genreBox {
+  cursor: pointer;
   border: 1px solid black;
   margin: 1vw;
   margin-top: 0;
@@ -45,17 +45,19 @@
   height: auto;
 }
 .films {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 50px;
   box-sizing: border-box;
   height: auto;
-  padding-left: 30px;
+  width: auto;
 }
 .filmInfo {
-  margin-right: 30px;
+  cursor: pointer;
   position: relative;
   overflow: auto;
   border: 1px solid black;
-  width: 17vw;
+  width: 20vw;
   height: 38vh;
 }
 .filmPictureBox {
@@ -87,6 +89,10 @@
   height: 10vh;
   width: 100%;
   bottom: 0;
+}
+.filmGenre {
+  display: flex;
+  justify-content: center;
 }
 @media only screen and (max-width: 768px) {
   .genreBox {

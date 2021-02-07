@@ -7,7 +7,6 @@ function addFilm(film) {
   var filmTemplate = document.querySelector("#filmTemplate");
   var clone = filmTemplate.content.cloneNode(true);
   filmInfo.forEach((item) => {
-    //console.log(item);
     var filmData = clone.querySelector("." + item[0]);
     filmData.textContent = item[1];
   });
@@ -15,8 +14,6 @@ function addFilm(film) {
   //Add trailer image
   addTrailerImage(clone, film.photo);
   //Add to category
-  console.log(film.genre.toLowerCase());
-  console.log(document.querySelector("." + film.genre.toLowerCase()));
   document
     .querySelector("." + film.genre.toLowerCase())
     .querySelector(".films")
@@ -53,4 +50,14 @@ function addTrailerImage(cloneOfTemplate, photo) {
           break;
       }
     });
+}
+
+function addRedirects() {
+  let films = document.querySelectorAll(".filmInfo");
+  for (i = 0; i < films.length; i++) {
+    films[i].addEventListener("click", function () {
+      let filmTitle = this.querySelector(".filmName").innerText;
+      window.location.replace("film?film=" + filmTitle);
+    });
+  }
 }
