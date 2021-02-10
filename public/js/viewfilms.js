@@ -1,4 +1,3 @@
-const storageRef = storage.ref();
 const main = document.querySelector(".genres");
 const template = document.querySelector("#genreTemplate");
 const elementArray = [

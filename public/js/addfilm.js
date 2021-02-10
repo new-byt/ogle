@@ -1,21 +1,27 @@
 function addFilm(film) {
   var filmInfo = [
-    ["filmName", film.title],
-    ["filmDescription", film.description],
-    ["filmRating", film.age],
+    [".filmName", film.title],
+    [".filmDescription", film.description],
+    [".filmRating", film.age],
   ];
   var filmTemplate = document.querySelector("#filmTemplate");
   var clone = filmTemplate.content.cloneNode(true);
   filmInfo.forEach((item) => {
-    var filmData = clone.querySelector("." + item[0]);
+    var filmData = clone.querySelector(item[0]);
     filmData.textContent = item[1];
   });
 
   //Add trailer image
   addTrailerImage(clone, film.photo);
   //Add to category
+  let filteredName = film.genre
+    .toLowerCase()
+    .replace("'", "")
+    .split(" ")
+    .join("");
+  console.log(filteredName);
   document
-    .querySelector("." + film.genre.toLowerCase())
+    .querySelector("." + filteredName)
     .querySelector(".films")
     .appendChild(clone);
 }

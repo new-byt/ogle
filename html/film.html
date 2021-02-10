@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/viewfilms.css">
+    <link rel="stylesheet" href="/css/film.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <!--STYLING END-->
 </head>
@@ -61,14 +61,30 @@
     </div>
     <div class="main clickAway">
         <div class="film">
-            <h1 class="filmName">Film name</h1>
+            <video class="filmTrailer" controls>
+                <source src="" type="video/mp4" class="filmTrailer">
+            </video>
+            <h1 class="filmName"></h1>
+            <h1 class="filmLength"></h1>
+            <h1 class="filmRating"></h1>
+            <h1 class="filmDesc"></h1>
+        </div>
+        <div class="seats"></div>
+        <select name="room" id="room">
+            <option hidden disabled selected value>Room</option>
+        </select>
+        <select name="time" id="time">
+            <option hidden disabled selected value>Select</option>
+        </select>
+        <div class="bookBox">
+            <button class="book"></button>
         </div>
     </div>
 
     <script src="js/firebase.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/film.js"></script>
-
+    <script src="js/seats.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,KAAK;CACb;;AACD,AAAA,aAAa,CAAC;EACZ,OAAO,EAAE,IAAI;CACd",
+    "sources": [
+        "film.scss",
+        "variables.scss"
+    ],
+    "names": [],
+    "file": "film.css"
+}

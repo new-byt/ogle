@@ -16,6 +16,46 @@ filmRef
   });
 
 function changeHeader(film) {
-  let titleBar = document.querySelector(".filmName");
-  titleBar.innerText = film.title;
+  let filmInfoArray = [
+    [".filmName", film.title],
+    [".filmLength", film.length],
+    [".filmRating", film.age],
+    [".filmDesc", film.description],
+  ];
+  filmInfoArray.forEach((element) => {
+    let currentElement = document.querySelector(element[0]);
+    currentElement.innerText = element[1];
+  });
+  addTrailer(film.trailer);
+}
+
+function addTrailer(trailer) {
+  var trailerElement = document.querySelector(".filmTrailer");
+  var trailerRef = storageRef.child("trailers/" + trailer);
+  trailerRef
+    .getDownloadURL()
+    .then(function (url) {
+      trailerElement.src = url;
+    })
+    .catch(function (error) {
+      // A full list of error codes is available at
+      // https://firebase.google.com/docs/storage/web/handle-errors
+      switch (error.code) {
+        case "storage/object-not-found":
+          console.log("File not found.");
+          break;
+
+        case "storage/unauthorized":
+          console.log("Unauthorized");
+          break;
+
+        case "storage/canceled":
+          // User canceled the upload
+          break;
+
+        case "storage/unknown":
+          // Unknown error occurred, inspect the server response
+          break;
+      }
+    });
 }

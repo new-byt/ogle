@@ -1,4 +1,3 @@
-const storageRef = storage.ref();
 const main = document.querySelector(".main");
 var genreArray = [];
 
@@ -11,7 +10,7 @@ if (vw <= 768) {
   }
 }
 
-var realData = false;
+var realData = true;
 //Gets films
 if (realData === true) {
   // REAL DATA
@@ -71,7 +70,9 @@ function createGenre(genre) {
   clone.querySelector(".arrow").addEventListener("click", function () {
     window.location.replace("viewfilms?genre=" + genre.toLowerCase());
   });
-  clone.querySelector(".category").classList.add(genre.toLowerCase());
+  clone
+    .querySelector(".category")
+    .classList.add(genre.toLowerCase().replace("'", "").split(" ").join(""));
   clone.querySelector(".categoryText").innerText = genre;
   main.appendChild(clone);
 }
