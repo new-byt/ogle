@@ -1,8 +1,26 @@
 video {
   width: 100vw;
+  height: auto;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .dropdownTime {
   display: none;
+}
+
+@media only screen and (min-width: 769px) {
+  video {
+    width: 50vw;
+    height: auto;
+  }
+  .filmTrailerBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 /*# sourceMappingURL=film.css.map */

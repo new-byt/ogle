@@ -5,7 +5,7 @@ const elementArray = [
   [".genrePic", "src"],
 ];
 //Gets films
-let test = async function () {
+(async function () {
   var genreArray = [];
   await db
     .collection("movies")
@@ -30,9 +30,12 @@ let test = async function () {
       });
     });
   console.log(genreArray);
-  createCategoryBox(genreArray);
-};
-test();
+  createCategoryBox(genreArray); //Read query when page loaded
+  const url = new URLSearchParams(window.location.search);
+  let loadGenre = url.get("genre");
+  let genreToLoad = document.querySelector("." + loadGenre);
+  genreToLoad.click();
+})();
 
 //Split duplicate genres and send them to a neww function
 function createCategoryBox(genreArray) {
@@ -48,23 +51,32 @@ async function createBox(genre) {
   var templateClone = template.content.cloneNode(true);
   //Category bar name
   let genreBox = templateClone.querySelector(".genreBox");
-  genreBox.classList.add(genre[0].toLowerCase());
+  let strippedGenre = genre[0]
+    .toLowerCase()
+    .replace("'", "")
+    .split(" ")
+    .join("");
+  genreBox.classList.add(strippedGenre);
   //Name
   var name = templateClone.querySelector(".genreName");
   name.innerText = genre[0];
   //Picture
   addPicture(genre[1][0].photo, templateClone);
-  eventListenerFunc(templateClone.querySelector(".genreBox"), genre);
+  eventListenerFunc(
+    templateClone.querySelector(".genreBox"),
+    genre,
+    strippedGenre
+  );
   main.appendChild(templateClone);
 }
 
 //addEventListener function
-function eventListenerFunc(box, genre) {
+function eventListenerFunc(box, genre, strippedGenre) {
   box.addEventListener("click", function () {
     let categoryName = document.querySelector(".categoryName");
     categoryName.innerText = genre[0];
     let filmGenre = document.querySelector(".filmGenre");
-    filmGenre.classList.add(genre[0].toLowerCase());
+    filmGenre.classList.add(strippedGenre);
     hideOtherGenres(genre);
   });
 }
@@ -110,11 +122,6 @@ function hideOtherGenres(genre) {
 //Click to view films of genre clicked
 function showFilmsOfGenre(genre) {
   genre[1].forEach((film) => {
-    addFilm(film);
-    addFilm(film);
-    addFilm(film);
-    addFilm(film);
-    addFilm(film);
     addFilm(film);
   });
   addRedirects();

@@ -2,7 +2,19 @@
 
 video {
   width: 100vw;
+  height: auto;
+  object-fit: fill;
 }
 .dropdownTime {
   display: none;
+}
+@media only screen and (min-width: 769px) {
+  video {
+    width: 50vw;
+    height: auto;
+  }
+  .filmTrailerBox {
+    display: flex;
+    justify-content: center;
+  }
 }
