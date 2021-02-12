@@ -16,6 +16,7 @@ filmRef
   });
 
 function changeHeader(film) {
+  document.title = "Ogle | " + film.title;
   let filmInfoArray = [
     [".filmName", film.title],
     [".filmLength", film.length],

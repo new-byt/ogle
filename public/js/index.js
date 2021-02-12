@@ -67,12 +67,11 @@ function createGenres(film) {
 function createGenre(genre) {
   var template = document.querySelector("#genre");
   var clone = template.content.cloneNode(true);
+  let filteredGenre = genre.toLowerCase().replace("'", "").split(" ").join("");
   clone.querySelector(".arrow").addEventListener("click", function () {
-    window.location.replace("viewfilms?genre=" + genre.toLowerCase());
+    window.location.replace("viewfilms?genre=" + filteredGenre);
   });
-  clone
-    .querySelector(".category")
-    .classList.add(genre.toLowerCase().replace("'", "").split(" ").join(""));
+  clone.querySelector(".category").classList.add(filteredGenre);
   clone.querySelector(".categoryText").innerText = genre;
   main.appendChild(clone);
 }
