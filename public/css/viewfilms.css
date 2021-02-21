@@ -1,19 +1,29 @@
 .genres {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
-  margin-bottom: 20px;
+  -ms-grid-columns: 20vw 20vw 20vw 20vw;
+      grid-template-columns: 20vw 20vw 20vw 20vw;
+  grid-gap: 2vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .genreBox {
   cursor: pointer;
   border: 1px solid black;
-  margin: 1vw;
-  margin-top: 0;
-  width: 28vw;
-  height: 35vh;
+  width: 100%;
+  height: auto;
   overflow: auto;
+}
+
+.genresBoxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .genreImage {
@@ -61,9 +71,12 @@
 .films {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto;
-  grid-gap: 50px;
+  -ms-grid-columns: 20vw 20vw 20vw 20vw;
+      grid-template-columns: 20vw 20vw 20vw 20vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-gap: 2vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: auto;
@@ -127,8 +140,14 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .genreBox {
-    width: 40vw;
+  .films {
+    -ms-grid-columns: 40vw 40vw;
+        grid-template-columns: 40vw 40vw;
+  }
+  .genres {
+    -ms-grid-columns: 45vw 45vw;
+        grid-template-columns: 45vw 45vw;
+    grid-gap: 5vw;
   }
 }
 /*# sourceMappingURL=viewfilms.css.map */

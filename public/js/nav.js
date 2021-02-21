@@ -35,7 +35,7 @@ function logout() {
     .auth()
     .signOut()
     .then(() => {
-      window.location.replace("/");
+      window.location.assign("/");
     })
     .catch((error) => {
       console.log(error);

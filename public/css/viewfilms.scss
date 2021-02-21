@@ -1,17 +1,20 @@
 @import "variables";
 .genres {
   display: grid;
-  grid-template-columns: auto auto auto;
-  margin-bottom: 20px;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+  grid-gap: 2vw;
+  justify-content: center;
 }
 .genreBox {
   cursor: pointer;
   border: 1px solid black;
-  margin: 1vw;
-  margin-top: 0;
-  width: 28vw;
-  height: 35vh;
+  width: 100%;
+  height: auto;
   overflow: auto;
+}
+.genresBoxes {
+  display: flex;
+  justify-content: center;
 }
 .genreImage {
   height: 25vh;
@@ -46,8 +49,9 @@
 }
 .films {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 50px;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+  justify-content: center;
+  grid-gap: 2vw;
   box-sizing: border-box;
   height: auto;
   width: auto;
@@ -95,7 +99,11 @@
   justify-content: center;
 }
 @media only screen and (max-width: 768px) {
-  .genreBox {
-    width: 40vw;
+  .films {
+    grid-template-columns: 40vw 40vw;
+  }
+  .genres {
+    grid-template-columns: 45vw 45vw;
+    grid-gap: 5vw;
   }
 }

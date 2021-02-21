@@ -20,10 +20,14 @@ function addFilm(film) {
     .split(" ")
     .join("");
   console.log(filteredName);
-  document
-    .querySelector("." + filteredName)
-    .querySelector(".films")
-    .appendChild(clone);
+  try {
+    document
+      .querySelector("." + filteredName)
+      .querySelector(".films")
+      .appendChild(clone);
+  } catch {
+    document.querySelector(".films").appendChild(clone);
+  }
 }
 
 //Add trailer function
@@ -63,7 +67,7 @@ function addRedirects() {
   for (i = 0; i < films.length; i++) {
     films[i].addEventListener("click", function () {
       let filmTitle = this.querySelector(".filmName").innerText;
-      window.location.replace("film?film=" + filmTitle);
+      window.location.assign("film?film=" + filmTitle);
     });
   }
 }

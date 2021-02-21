@@ -57,6 +57,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: auto;
+  grid-gap: 2vw;
 }
 
 .filmInfo {
@@ -64,7 +65,7 @@
   position: relative;
   overflow: auto;
   border: 1px solid black;
-  width: 17vw;
+  width: 100%;
   height: 38vh;
 }
 
@@ -121,8 +122,8 @@
     margin: auto;
   }
   .films {
-    -ms-grid-columns: 40vw 40vw;
-        grid-template-columns: 40vw 40vw;
+    -ms-grid-columns: 45vw 45vw;
+        grid-template-columns: 45vw 45vw;
     grid-gap: 10px;
     padding-top: 16px;
     -webkit-box-sizing: border-box;

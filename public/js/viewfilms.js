@@ -1,9 +1,18 @@
 const main = document.querySelector(".genres");
 const template = document.querySelector("#genreTemplate");
+const categoryName = document.querySelector(".categoryName");
+const url = new URLSearchParams(window.location.search);
+const search = url.get("search");
 const elementArray = [
   [".genreName", "innerText"],
   [".genrePic", "src"],
 ];
+
+//Set search bar value
+searchBar.value = search;
+if (search) {
+  categoryName.innerText = "Results for: " + search;
+}
 //Gets films
 (async function () {
   var genreArray = [];
@@ -31,12 +40,39 @@ const elementArray = [
     });
   console.log(genreArray);
   createCategoryBox(genreArray); //Read query when page loaded
-  const url = new URLSearchParams(window.location.search);
-  let loadGenre = url.get("genre");
-  let genreToLoad = document.querySelector("." + loadGenre);
-  genreToLoad.click();
+  if (window.location.search.length > 1) {
+    if (url.get("genre")) {
+      let loadGenre = url.get("genre");
+      let genreToLoad = document.querySelector("." + loadGenre);
+      genreToLoad.click();
+    } else if (search) {
+      loadSearchResults(genreArray);
+    }
+  }
+  console.log(window.location.search);
 })();
 
+//load search results
+function loadSearchResults(genreArray) {
+  document.querySelector(".genres").style.display = "none";
+  let films = document.getElementsByClassName("filmInfo");
+  genreArray.forEach((genreFilms) => {
+    genreFilms[1].forEach((film) => {
+      addFilm(film);
+    });
+  });
+  for (i = 0; i < films.length; i++) {
+    let filmName = films[i].querySelector(".filmName");
+    title = filmName.textContent || filmName.innerText;
+    if (title.toUpperCase().indexOf(search.toUpperCase()) > -1) {
+      console.log(title.toUpperCase());
+      films[i].style.display = "";
+    } else {
+      films[i].style.display = "none";
+    }
+  }
+  addRedirects();
+}
 //Split duplicate genres and send them to a neww function
 function createCategoryBox(genreArray) {
   genreArray = [...new Set(genreArray)]; //Remove duplicate genres

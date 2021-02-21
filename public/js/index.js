@@ -10,45 +10,32 @@ if (vw <= 768) {
   }
 }
 
-var realData = true;
 //Gets films
-if (realData === true) {
-  // REAL DATA
-  (async function () {
-    await db
-      .collection("movies")
-      .get()
-      .then(function (querySnapshot) {
-        console.log(querySnapshot);
-        querySnapshot.forEach(function (doc) {
-          film = doc.data();
-          if (doc.id !== "none") {
-            createGenres(film);
-          }
-        });
-      });
-    createFilmElements(genreArray);
-  })();
-} else {
-  // DUMMY DATA
-  (async function () {
-    await fetch("js/testData.json")
-      .then((response) => response.json())
-      .then((films) => {
-        console.log(films);
-        films.forEach((film) => {
-          console.log(film);
+// REAL DATA
+(async function () {
+  await db
+    .collection("movies")
+    .get()
+    .then(function (querySnapshot) {
+      console.log(querySnapshot);
+      querySnapshot.forEach(function (doc) {
+        film = doc.data();
+        if (doc.id !== "none") {
           createGenres(film);
-        });
+          createGenres(film);
+          createGenres(film);
+          createGenres(film);
+          createGenres(film);
+        }
       });
-    createFilmElements(genreArray);
-  })();
-}
+    });
+  createFilmElements(genreArray);
+})();
+
 function createGenres(film) {
   newGenre = true;
   if (genreArray.length != 0) {
     for (i = 0; i < genreArray.length; i++) {
-      console.log(genreArray[i].genre);
       if (genreArray[i].genre === film.genre) {
         console.log(genreArray[i][0] + "Duplicate");
         genreArray[i].films.push([film]);

@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ogle | View films</title>
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
     <!--STYLING START-->
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/viewfilms.css">
-    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/viewfilms.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
     <!--STYLING END-->
 </head>
 
@@ -25,17 +25,17 @@
             <!-- logo -->
             <div class="logoBox">
                 <a href="/">
-                    <img src="/assets/logo.png" alt="logo" class="logo">
+                    <img src="/assets/logo.png" alt="logo" class="logo" />
                 </a>
             </div>
         </div>
         <!-- search -->
         <div class="searchBox center clickAway">
-            <input type="text" class="search" placeholder="Search">
+            <input type="text" class="search" placeholder="Search" />
         </div>
         <!-- Sidebar button -->
         <div class="hamburger">
-            <img src="/assets/menu.png" alt="hamburger menu" class="hamburgerImage">
+            <img src="/assets/menu.png" alt="hamburger menu" class="hamburgerImage" />
         </div>
         <!-- links -->
         <div class="links">
@@ -47,15 +47,24 @@
         </div>
         <!-- Sidebar -->
         <div class="sidebar">
-            <div class="closeSidebarMenu">
-            </div>
+            <div class="closeSidebarMenu"></div>
             <!-- links -->
             <ul class="sidebarButtons">
-                <li class="sidebarButton"><a href="/" class="pageChangeButton">Home</a></li>
-                <li class="sidebarButton"><a href="/viewfilms" class="pageChangeButton">View films</a></li>
-                <li class="sidebarButton login"><a href="/login" class="pageChangeButton login">Login</a></li>
-                <li class="sidebarButton logout"><a class="logout" onclick="logout()">Logout</a></li>
-                <li class="sidebarButton create"><a href="/signup" class="pageChangeButton create">Sign up</a></li>
+                <li class="sidebarButton">
+                    <a href="/" class="pageChangeButton">Home</a>
+                </li>
+                <li class="sidebarButton">
+                    <a href="/viewfilms" class="pageChangeButton">View films</a>
+                </li>
+                <li class="sidebarButton login">
+                    <a href="/login" class="pageChangeButton login">Login</a>
+                </li>
+                <li class="sidebarButton logout">
+                    <a class="logout" onclick="logout()">Logout</a>
+                </li>
+                <li class="sidebarButton create">
+                    <a href="/signup" class="pageChangeButton create">Sign up</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -66,7 +75,8 @@
         <div class="filmGenre">
             <div class="films"></div>
         </div>
-        <div class="genres">
+        <div class="genresBoxes">
+            <div class="genres"></div>
         </div>
     </div>
 
@@ -74,7 +84,7 @@
     <template id="genreTemplate">
         <div class="genreBox">
             <div class="genreImage">
-                <img src="" class="genrePic">
+                <img src="" class="genrePic" />
             </div>
             <div class="genreText">
                 <h1 class="genreName"></h1>
@@ -85,7 +95,7 @@
     <template id="filmTemplate">
         <div class="filmInfo">
             <div class="filmPictureBox">
-                <img src="" class="filmPicture">
+                <img src="" class="filmPicture" />
             </div>
             <div class="filmTextSection">
                 <div>
@@ -101,12 +111,11 @@
         </div>
     </template>
 
-
     <script src="js/firebase.js"></script>
     <script src="js/nav.js"></script>
+    <script src="js/searchbar.js"></script>
     <script src="js/addfilm.js"></script>
     <script src="js/viewfilms.js"></script>
-
 </body>
 
 </html>
