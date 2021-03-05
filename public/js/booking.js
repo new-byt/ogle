@@ -1,7 +1,7 @@
 let bookingButton = document.querySelector(".bookingButton");
 bookingButton.addEventListener("click", async function () {
   console.log(bookingSeatsArray);
-  if (!firebase.auth().currentUser) {
+  if (!firebase.auth().currentUser && timeSelect.value) {
     window.location.assign("/login");
   }
   for (i = 0; i < bookingSeatsArray.length; i++) {
