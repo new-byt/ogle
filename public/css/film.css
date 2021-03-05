@@ -12,6 +12,7 @@ video {
 .bookingButton {
   padding: 15px;
   background-color: #4392f1;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 769px) {
