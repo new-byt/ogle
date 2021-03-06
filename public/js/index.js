@@ -11,7 +11,6 @@ if (vw <= 768) {
 }
 
 //Gets films
-// REAL DATA
 (async function () {
   await db
     .collection("movies")
@@ -21,10 +20,6 @@ if (vw <= 768) {
       querySnapshot.forEach(function (doc) {
         film = doc.data();
         if (doc.id !== "none") {
-          createGenres(film);
-          createGenres(film);
-          createGenres(film);
-          createGenres(film);
           createGenres(film);
         }
       });

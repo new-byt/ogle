@@ -41,15 +41,21 @@ function addDropdowns(rooms) {
 }
 
 function createOption(value, querySelectorPlace, room, timeInWords) {
-  let dropdown = document.querySelector(querySelectorPlace);
-  let dropdownItem = document.createElement("option");
-  dropdownItem.value = value;
-  dropdownItem.innerText = value;
-  if (room) {
-    dropdownItem.classList.add(room, "dropdownTime");
-    dropdownItem.value = timeInWords;
+  let option = document.querySelector("#" + timeInWords);
+  if (!option) {
+    let dropdown = document.querySelector(querySelectorPlace);
+    let dropdownItem = document.createElement("option");
+    dropdownItem.value = value;
+    dropdownItem.innerText = value;
+    if (room) {
+      dropdownItem.classList.add(room, "dropdownTime");
+      dropdownItem.value = timeInWords;
+      dropdownItem.id = timeInWords;
+    }
+    dropdown.appendChild(dropdownItem);
+  } else {
+    option.classList.add(room);
   }
-  dropdown.appendChild(dropdownItem);
 }
 
 //event listener for room when changed show different times

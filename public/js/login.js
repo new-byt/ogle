@@ -24,13 +24,13 @@ function errorOutputFunc(error) {
   if (Number.isInteger(error)) {
     switch (error) {
       case 1:
-        error = "Passwords don't match.";
+        error = "Oops! Passwords don't match";
         break;
       case 2:
         error = "Email is not valid";
         break;
       default:
-        error = "Error try again.";
+        error = "Error try again";
         break;
     }
   }
@@ -48,6 +48,7 @@ function createAccount(email, password) {
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
+      window.location.assign("/");
       var user = userCredential.user;
       console.log(user);
     })
@@ -89,4 +90,5 @@ function post(idToken) {
       idToken: idToken,
     })
   );
+  window.location.assign("/");
 }

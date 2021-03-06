@@ -159,6 +159,9 @@ function hideOtherGenres(genre) {
 function showFilmsOfGenre(genre) {
   genre[1].forEach((film) => {
     addFilm(film);
+    addFilm(film);
+    addFilm(film);
+    addFilm(film);
   });
   addRedirects();
 }

@@ -98,7 +98,7 @@
   }
   .films {
     grid-template-columns: 45vw 45vw;
-    grid-gap: 10px;
+    grid-gap: 5vw;
     padding-top: 16px;
     box-sizing: border-box;
     height: 30vh;
@@ -108,12 +108,10 @@
     position: relative;
     overflow: auto;
     border: 1px solid black;
-    width: 40vw;
     height: 28vh;
   }
   .filmPictureBox {
     height: 18vh;
-    width: 40vw;
   }
   .filmDescription {
     font-size: 10px;

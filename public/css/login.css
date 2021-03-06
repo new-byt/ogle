@@ -13,7 +13,6 @@
   border-bottom: 1px solid #000000;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  padding-left: 35px;
   margin-top: auto;
   background-color: #4392f1;
   height: auto;
@@ -21,6 +20,7 @@
 
 .pageTitle {
   font-size: 20px;
+  margin-left: 10vw;
 }
 
 .email,
@@ -30,20 +30,18 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #eef0f2;
-  width: 50vw;
+  width: calc(73vw - 7vh);
 }
 
 .emailBox,
 .passwordBox,
 .confirmPasswordBox {
+  height: 7vh;
+  margin-bottom: 10px;
+  margin-left: 10vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 7vh;
-  margin-bottom: 10px;
 }
 
 .submitDiv {
@@ -72,13 +70,13 @@
 }
 
 @media only screen and (max-width: 650px) {
-  .loginBarText {
+  .pageTitle {
     font-size: 20px;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .loginBarText {
+  .pageTitle {
     font-size: 26px;
   }
   body {
