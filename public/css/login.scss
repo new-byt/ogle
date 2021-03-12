@@ -46,10 +46,10 @@
 }
 .submitDiv {
   position: absolute;
-  width: 100%;
+  width: 40vw;
   bottom: 30vh;
-  display: flex;
-  justify-content: center;
+  margin-left: calc(10vw + 7vh);
+  text-align: center;
 }
 .submitButton {
   border: 1px solid black;
@@ -58,9 +58,18 @@
   padding: 15px;
   padding-left: 10vw;
   padding-right: 10vw;
+  width: 100%;
 }
 .icon {
   height: 7vh;
+}
+.errorOutput,
+.signup,
+.loginAlready {
+  margin-left: calc(10vw + 7vh);
+  margin-top: 30px;
+  width: 40vw;
+  text-align: center;
 }
 @media only screen and (max-width: 650px) {
   .pageTitle {
@@ -73,6 +82,9 @@
   }
   body {
     font-size: 20px;
+  }
+  .submitButton {
+    width: 30vw;
   }
 }
 @media only screen and (min-width: 1025px) {

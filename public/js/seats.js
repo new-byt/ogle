@@ -12,6 +12,7 @@ async function getSeats(room, time) {
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
+        console.log(doc.data());
         createSeats(querySnapshot.docs.length);
         db.collection(room)
           .doc(doc.id)

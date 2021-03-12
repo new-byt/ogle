@@ -7,7 +7,7 @@ bookingButton.addEventListener("click", async function () {
   for (i = 0; i < bookingSeatsArray.length; i++) {
     await db
       .collection(roomSelect.value)
-      .where("number", "==", bookingSeatsArray[i])
+      .where("number", "==", bookingSeatsArray[i] + 1)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {

@@ -27,7 +27,7 @@ if (search) {
           for (i = 0; i < genreArray.length; i++) {
             if (genreArray[i][0] == film.genre) {
               console.log("Duplicate");
-              genreArray[i].push([film]);
+              genreArray[i][1].push(film);
               newGenre = false;
               break;
             }
@@ -159,9 +159,7 @@ function hideOtherGenres(genre) {
 function showFilmsOfGenre(genre) {
   genre[1].forEach((film) => {
     addFilm(film);
-    addFilm(film);
-    addFilm(film);
-    addFilm(film);
   });
+  console.log(genre);
   addRedirects();
 }
